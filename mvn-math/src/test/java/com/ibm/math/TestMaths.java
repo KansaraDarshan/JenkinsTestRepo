@@ -40,5 +40,11 @@ public class TestMaths {
 		assertThrows(ArithmeticException.class,()->maths.div(2,0));
 	}
 	
+	@Test
+	public void testSqaure()
+	{
+		assertEquals(25,maths.sqaure(5));
+	}
+	
 	
 }

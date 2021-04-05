@@ -16,4 +16,8 @@ public class Maths {
 	{
 		return a/b;
 	}
+	public int sqaure(int a) {
+	
+	return a*a;
+	}
 }
