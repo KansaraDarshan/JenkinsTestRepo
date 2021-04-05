@@ -4,24 +4,31 @@ pipeline{
 	
 	stages{ 
 		stage('Check stage')
-		{
-		  steps{
-		    bat 'mvn --version'
-		  }
-		} 
+		     {
+		  				steps{
+		    					bat 'mvn --version'
+		                      }
+		       } 
 		
-		stage('Compile stage'){
+		stage('Compile stage')
+		{
 		     steps{
 		         
 		         bat 'mvn clean compile'
 		         }
 		         
-		       }
-		       stage('test stage'){
-		       steps
-		       {
-		       	 bat 'mvn test'
-		       }
+		    }
+		       
+		       stage('test stage')
+		       	{
+		       			steps
+		       				{
+		       	 					bat 'mvn test'
+		       				}
+		       	}
+		       
+		       
+		       
 		       }
 		       
 		       
