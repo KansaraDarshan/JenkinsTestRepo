@@ -1,8 +1,10 @@
 pipeline{
 
 	agent any
-	
+	try{
 	stages{ 
+	
+	
 		stage('Check stage')
 		     {
 		  				steps{
@@ -31,6 +33,10 @@ pipeline{
 		       
 		       }
 		       
-		       
+		     }
+		     finally
+		     {
+		     
+		     }  
 		       
 		       }
