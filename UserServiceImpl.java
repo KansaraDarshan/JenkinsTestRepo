@@ -76,4 +76,11 @@ public class UserServiceImpl implements UserService {
 		System.out.println("list: " + userNames);
 		return userNames;
 	}
+	
+	@Override
+	public List getAllAdminNames() {
+		List adminNames = this.userRepository.findAll();
+		System.out.println("list: " + adminNames);
+		return adminNames;
+	}
 }
