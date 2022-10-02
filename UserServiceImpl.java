@@ -87,7 +87,10 @@ public class UserServiceImpl implements UserService {
 		System.out.println("list: " + userNames);
 		return userNames;
 	}
-	
+	if (local != null) {
+			System.out.println("User already exists");
+			throw new Exception("User already exists");
+		} else {
 	@Override
 	public List getAllAdminNames() {
 		List adminNames = this.userRepository.findAll();
