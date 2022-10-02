@@ -56,6 +56,15 @@ public class UserServiceImpl implements UserService {
 	public void deleteUser(Long userId) throws Exception {
 		this.userRepository.deleteById(userId);
 	}
+		
+	public User createUser(User user) throws Exception {
+	if (local != null) {
+			System.out.println("User already exists");
+			throw new Exception("User already exists");
+		} else {
+			local = this.userRepository.save(user);
+
+		User local = this.userRepository.findByUsername(user.getUsername());
 
 	// update user by username
 	@Override
@@ -93,7 +102,15 @@ public class UserServiceImpl implements UserService {
 		} else {
 	@Override
 	public List getAllAdminNames() {
-		List adminNames = this.userRepository.findAll();
+		List adminNames = this.us
+	public User createUser(User user) throws Exception {
+	if (local != null) {
+			System.out.println("User already exists");
+			throw new Exception("User already exists");
+		} else {
+			local = this.userRepository.save(user);
+
+		User local = this.userRepository.findByUsername(user.getUsername());erRepository.findAll();
 		System.out.println("list: " + adminNames);
 		return adminNames;
 	}
