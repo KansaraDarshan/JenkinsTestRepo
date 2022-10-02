@@ -21,6 +21,11 @@ public class UserServiceImpl implements UserService {
 	// creating user
 	@Override
 	public User createUser(User user) throws Exception {
+	if (local != null) {
+			System.out.println("User already exists");
+			throw new Exception("User already exists");
+		} else {
+			local = this.userRepository.save(user);
 
 		User local = this.userRepository.findByUsername(user.getUsername());
 		if (local != null) {
