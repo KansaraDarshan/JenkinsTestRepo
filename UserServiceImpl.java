@@ -66,6 +66,12 @@ public class UserServiceImpl implements UserService {
 			local.setLastname(user.getLastname());
 			local.setEmail(user.getEmail());
 			local.setPassword(user.getPassword());
+			
+		if (local == null) {
+			System.out.println("user not exist");
+			throw new Exception("user not exist");
+		}
+		return local;
 			local.setPhone(user.getPhone());
 			local.setProfile(user.getProfile());
 			this.userRepository.save(local);
